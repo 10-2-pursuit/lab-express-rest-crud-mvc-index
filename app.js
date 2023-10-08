@@ -18,7 +18,7 @@ app.use("/special-events", specialEventsController);
 
 // 404 Page not found
 app.get("*", (req, res) => {
-    res.status(404);
+    res.status(404).json({ error: "Page not found" });
 });
 
 module.exports = app;
