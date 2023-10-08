@@ -9,6 +9,9 @@ const specialEvents = require('./controllers/special-eventsController.js');
 // CONFIGURATION
 const app = express();
 
+// MIDDLEWARE
+app.use('/locations', locations);
+
 // ROUTES
 app.get('/', (req, res) => {
 	res.send('Hello, World! Welcome to Express Rest CRUD MVC Index Lab');
