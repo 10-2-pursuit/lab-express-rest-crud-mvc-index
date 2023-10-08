@@ -10,6 +10,6 @@ app.get("/locations", (req, res) => {
         res.status(404).send(`Sorry, that location cannot be found at /location/${indexOfArray}`)
     } else {
         const location = locationData[indexOfArray];
-        res.json(pokemon);
+        res.json(location);
     }
 });
