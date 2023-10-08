@@ -9,6 +9,7 @@ app.get("/locations", (req, res) => {
     if (isNaN(indexOfArray) || indexOfArray < 0 || indexOfArray >= locationData.length){
         res.status(404).send(`Sorry, that location cannot be found at /location/${indexOfArray}`)
     } else {
-        const location = locationData
+        const location = locationData[indexOfArray];
+        res.json(pokemon);
     }
-})
+});
