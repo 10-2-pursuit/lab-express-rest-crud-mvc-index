@@ -21,5 +21,10 @@ app.get('/', (req, res) => {
 	res.send('Hello, World! Welcome to Express Rest CRUD MVC Index Lab');
 });
 
+// 404 PAGE
+app.get('*', (req, res) => {
+	res.status(404).json({ error: 'Sorry, no page found!' });
+});
+
 // EXPORT
 module.exports = app;
