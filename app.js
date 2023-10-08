@@ -5,6 +5,7 @@ const machines = require('./controllers/machinesController.js');
 const persons = require('./controllers/personsController.js');
 const plans = require('./controllers/plansController.js');
 const specialEvents = require('./controllers/special-eventsController.js');
+const people = require('./controllers/peopleController.js');
 
 // CONFIGURATION
 const app = express();
@@ -15,6 +16,7 @@ app.use('/machines', machines);
 app.use('/persons', persons);
 app.use('/plans', plans);
 app.use('/special-events', specialEvents);
+app.use('/locations/people', people);
 
 // ROUTES
 app.get('/', (req, res) => {
