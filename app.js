@@ -1,5 +1,10 @@
 // DEPENDENCIES
 const express = require('express');
+const equipment = require('./controllers/machinesController.js');
+const locations = require('./controllers/locationsController.js');
+const people = require('./controllers/personsController.js');
+const plans = require('./controllers/plansController.js');
+const specialEvents = require('./controllers/special-eventsController.js');
 
 // CONFIGURATION
 const app = express();
