@@ -14,6 +14,7 @@ app.use('/locations', locations);
 app.use('/machines', machines);
 app.use('/persons', persons);
 app.use('/plans', plans);
+app.use('/special-events', specialEvents);
 
 // ROUTES
 app.get('/', (req, res) => {
