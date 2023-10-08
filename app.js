@@ -13,6 +13,7 @@ const app = express();
 app.use('/locations', locations);
 app.use('/machines', machines);
 app.use('/persons', persons);
+app.use('/plans', plans);
 
 // ROUTES
 app.get('/', (req, res) => {
