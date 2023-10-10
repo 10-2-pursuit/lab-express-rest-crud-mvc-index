@@ -21,4 +21,8 @@ app.use("/plans", plans);
 
 app.use("/special-events", specialEvents)
 
+app.use((req, res) => {
+    res.status(404).send("404 - Not Found")
+})
+
 module.exports = app;
