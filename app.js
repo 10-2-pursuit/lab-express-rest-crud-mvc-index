@@ -10,9 +10,15 @@ const specialEvent = require("./models/specialEvent");
 
 const app = express();
 
+app.use("/locations", locations)
+
 
 app.get("/", (req, res) => {
     res.send(`Hello World!`);
+})
+
+app.get("*", (req, res) => {
+    res.status(404).json({error: "no page found"})
 })
 
 module.exports = app;

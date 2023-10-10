@@ -1,9 +1,14 @@
+
+const express = require("express"); 
+
 const locations = express.Router();
 
 const locationData = require("../models/location");
+// Seperation of concerns 
+//  Middleware above the routes!!!!!
+//  a function that happens between a request and response
 
-
-app.get("/locations", (req, res) => {
+locations.get("/locations", (req, res) => {
     const indexOfArray = parseInt(req.params.indexOfArray);
 
     if (isNaN(indexOfArray) || indexOfArray < 0 || indexOfArray >= locationData.length){
@@ -13,3 +18,6 @@ app.get("/locations", (req, res) => {
         res.json(location);
     }
 });
+ 
+
+module.exports = locations;
