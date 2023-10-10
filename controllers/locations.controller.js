@@ -1,7 +1,7 @@
 const express = require("express")
 const locations = express.Router()
-const locationsArray = require("../models/locations.model.js")
-const peopleArray = require("../models/persons.model.js")
+const locationsArray = require("../models/location.model.js")
+const peopleArray = require("../models/person.model.js")
 
 locations.get("/", (req,res) => {
     res.json(locationsArray)

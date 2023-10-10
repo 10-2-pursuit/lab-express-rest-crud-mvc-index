@@ -1,6 +1,6 @@
 const express = require("express")
 const machines = express.Router()
-const machinesArray = require("../models/machines.model.js")
+const machinesArray = require("../models/machine.model.js")
 
 machines.get("/", (req,res) => {
     res.json(machinesArray)
