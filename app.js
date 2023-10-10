@@ -11,6 +11,10 @@ const specialEvent = require("./models/specialEvent");
 const app = express();
 
 app.use("/locations", locations)
+app.use("machines", machines)
+app.use("person", person)
+app.use("plan", plan)
+app.use("specialEvent", specialEvent)
 
 
 app.get("/", (req, res) => {
