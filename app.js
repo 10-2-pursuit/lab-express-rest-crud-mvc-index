@@ -21,8 +21,31 @@ app.use("/plans", plans);
 
 app.use("/special-events", specialEvents)
 
+app.get("/locations/people", (req, res) => {
+    const locationData = require("./models/location.model.js");
+    const personData = require("./models/person.model.js");
+    const organizedLocationData = [];
+
+    locationData.forEach((location) => {
+        const peopleAtLocation = personData.filter((person) => person.mainLocation === location.zip);
+
+        const locationOfPeople = {
+            street: location.street,
+            city: location.city,
+            state: location.state,
+            zip: location.zip,
+            people: peopleAtLocation,
+        };
+
+        organizedLocationData.push(locationOfPeople);
+    })
+
+    res.json(organizedLocationData);
+
+})
+
 app.use((req, res) => {
-    res.status(404).send("404 - Not Found")
+    res.status(404).send("404 - Sorry, no page found!")
 })
 
 module.exports = app;
