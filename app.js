@@ -1,34 +1,19 @@
 const express = require("express")
-const locations = require("./models/locations.model.js")
-const persons = require("./models/persons.model.js")
-const plans = require("./models/plans.model.js")
-const machines = require("./models/machines.model.js")
-const specialEvents = require("./models/specialEvents.model.js")
-
 const app = express()
 
-app.get("/", (req,res) => {
-    res.send("Hello, world!")
-})
+const locationsController = require("./controllers/locations.controller.js")
+app.use("/locations", locationsController)
 
-app.get("/locations", (req,res) => {
-    res.send(locations)
-})
+const personsController = require("./controllers/people.controller.js")
+app.use("/people", personsController)
 
-app.get("/persons", (req,res) => {
-    res.send(persons)
-})
+const plansController = require("./controllers/plans.controller.js")
+app.use("/plans", plansController)
 
-app.get("/plans", (req,res) =>{
-    res.send(plans)
-})
+const machinesController = require("./controllers/machines.controller.js")
+app.use("/machines", machinesController)
 
-app.get("/machines", (req,res) => {
-    res.send(machines)
-})
-
-app.get("/specialEvents", (req,res) => {
-    res.send(specialEvents)
-})
+const specialEventsController = require("./controllers/specialEvents.controller.js")
+app.use("/special-events", specialEventsController)
 
 module.exports = app
