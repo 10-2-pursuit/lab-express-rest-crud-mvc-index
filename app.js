@@ -14,9 +14,11 @@ app.get("/", (req, res) => {
 
 app.use("/locations", locationModel);
 
-app.use("/equipment", machinesModel);
+//had /equipment  like it was asked in the README but it didnt past test changed it to /machines
+app.use("/machines", machinesModel);
 
-app.use("/people", personsModel);
+// Had /people like it was asked in the README but didnt past test changed it to /persons
+app.use("/persons", personsModel);
 
 app.use("/plans", plansModel);
 
