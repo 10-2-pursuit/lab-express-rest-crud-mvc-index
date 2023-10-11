@@ -10,6 +10,8 @@ const specialEvent = require("./models/specialEvent");
 
 const app = express();
 
+
+app.use(express.json());
 app.use("/locations", locations)
 app.use("/machines", machines)
 app.use("/person", person)
