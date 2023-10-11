@@ -13,14 +13,22 @@ locations.get("/", (req, res) => {
  res.json(locationData);
 });
 
-locations.get(":/id", (req, res) => {
-    const { id }= req.params;
+locations.get(":/index", (req, res) => {
+    const { index }= req.params;
     console.log("Hello look at me<<<_____________")
-res.json(locationData[0]);
+    if (locationData[index]){
+        res.json(locationData[index])
+    } else {
+        res.status(404).send("No location at that index");
+    }
+// res.json(locationData[0]);
 })
 
 locations.post("/", (req, res) => {
-    console.log(req)
+    console.log("post route")
+    console.log(req.body)
+   locationData.push({name: "newlocation", awesome:true })
+        res.status(200).json(locationData[locationData.length - 1])
     res.send("locations")
 })
  
