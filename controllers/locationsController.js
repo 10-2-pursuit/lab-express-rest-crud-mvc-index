@@ -8,15 +8,21 @@ const locationData = require("../models/location");
 //  a function that happens between a request and response
 
 locations.get("/", (req, res) => {
-    const indexOfArray = parseInt(req.params.indexOfArray);
+ console.log("sending all location data")
 
-    if (isNaN(indexOfArray) || indexOfArray < 0 || indexOfArray >= locationData.length){
-        res.status(404).send(`Sorry, that location cannot be found at /location/${indexOfArray}`)
-    } else {
-        const location = locationData[indexOfArray];
-        res.json(location);
-    }
+ res.json(locationData);
 });
+
+locations.get(":/id", (req, res) => {
+    const { id }= req.params;
+    console.log("Hello look at me<<<_____________")
+res.json(locationData[0]);
+})
+
+locations.post("/", (req, res) => {
+    console.log(req)
+    res.send("locations")
+})
  
 
 module.exports = locations;
