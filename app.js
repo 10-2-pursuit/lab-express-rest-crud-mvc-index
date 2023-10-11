@@ -7,10 +7,6 @@ const specialEvents = require("./controllers/special-events.controller.js");
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.send("Hello, world!")
-})
-
 app.use("/locations", locations);
 
 app.use("/persons", persons);
@@ -42,6 +38,10 @@ app.get("/locations/people", (req, res) => {
 
     res.json(organizedLocationData);
 
+})
+
+app.get("/", (req, res) => {
+    res.send("Hello, world!")
 })
 
 app.use((req, res) => {
