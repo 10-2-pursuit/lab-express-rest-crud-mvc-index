@@ -1,10 +1,10 @@
 const express = require("express");
 
-const locations = require("./models/location");
-const machines = require("./models/machine");
-const person = require("./models/person");
-const plan = require("./models/plan");
-const specialEvent = require("./models/specialEvent");
+const locationData = require("./models/location");
+const machineData = require("./models/machine");
+const personData = require("./models/person");
+const planData = require("./models/plan");
+const specialEventData = require("./models/specialEvent");
 
 
 
@@ -13,11 +13,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/locations", locations)
-app.use("/machines", machines)
-app.use("/person", person)
-app.use("/plan", plan)
-app.use("/specialEvent", specialEvent)
+// app.use("/locations", locations)
+// app.use("/machines", machines)
+// app.use("/person", person)
+// app.use("/plan", plan)
+// app.use("/specialEvent", specialEvent)
 
 
 app.get("/", (req, res) => {
