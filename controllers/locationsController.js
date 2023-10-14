@@ -21,14 +21,14 @@ locations.get(":/index", (req, res) => {
     } else {
         res.status(404).send("No location at that index");
     }
-// res.json(locationData[0]);
+
 })
 
 locations.post("/", (req, res) => {
     console.log("post route")
-    console.log(req.body)
+    console.log(req.body);
    locationData.push({name: "newlocation", awesome:true })
-        res.status(200).json(locationData[locationData.length - 1])
+    res.status(200).json(locationData[locationData.length - 1]);
     res.send("locations")
 })
  
