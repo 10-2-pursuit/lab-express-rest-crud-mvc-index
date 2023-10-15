@@ -2,7 +2,7 @@ const express = require("express");
 
 const locations = express.Router();
 
-const locationData = require("../models/location");
+const locationData = require("../models/locations");
 // Seperation of concerns 
 //  Middleware above the routes!!!!!
 //  a function that happens between a request and response
