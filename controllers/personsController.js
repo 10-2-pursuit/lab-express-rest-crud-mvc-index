@@ -1,14 +1,14 @@
 const express = require("express");
 
-const person = express.Router();
+const persons = express.Router();
 
-const personData = require("../models/person");
+const personData = require("../models/persons");
 
-person.get("/", (req, res) => {
+persons.get("/", (req, res) => {
 
     console.log("send all person data")
 
     res.json(personData);
 })
 
-module.exports = person; 
+module.exports = persons; 

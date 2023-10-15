@@ -22,15 +22,18 @@ app.get("/machines", (req, res) => {
     console.log(machineData);
 });
 
-app.get("/person", (req, res) => {
+app.get("/persons", (req, res) => {
     res.send(`${personData}`);
+    console.log(personData);
 });
 
 app.get("/plans", (req, res) => {
     res.send(`${planData}`);
+    console.log(planData);
 });
 app.get("/specialEvents", (req, res) => {
     res.send(`${specialEventData}`);
+    console.log(specialEventData);
 });
 
 app.get('/404', (req, res) => {
