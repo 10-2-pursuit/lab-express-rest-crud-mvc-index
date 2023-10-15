@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
+
 const locationData = require("./models/locations");
 const machineData = require("./models/machines");
-const personData = require("./models/person");
+const personData = require("./models/persons");
 const planData = require("./models/plans");
 const specialEventData = require("./models/specialEvents");
 
@@ -11,23 +12,24 @@ const specialEventData = require("./models/specialEvents");
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
-app.get('/location', (req, res) => {
+app.get('/locations', (req, res) => {
     res.send(`${locationData}`);
-    // console.log(locationData);
+    console.log(locationData);
 });
 
-app.get("/machine", (req, res) => {
+app.get("/machines", (req, res) => {
     res.send(`${machineData}`);
+    console.log(machineData);
 });
 
 app.get("/person", (req, res) => {
     res.send(`${personData}`);
 });
 
-app.get("/plan", (req, res) => {
+app.get("/plans", (req, res) => {
     res.send(`${planData}`);
 });
-app.get("/specialEvent", (req, res) => {
+app.get("/specialEvents", (req, res) => {
     res.send(`${specialEventData}`);
 });
 
