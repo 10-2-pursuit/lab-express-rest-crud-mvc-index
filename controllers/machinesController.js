@@ -4,7 +4,7 @@ const machines = express.Router();
 
 const machinesData = require("../models/machine");
 
-machines.get("/", (req, res) => {
+machines.get("/machines", (req, res) => {
     
     console.log("Send all machine data")
 

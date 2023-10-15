@@ -4,7 +4,7 @@ const persons = express.Router();
 
 const personData = require("../models/persons");
 
-persons.get("/", (req, res) => {
+persons.get("/persons", (req, res) => {
 
     console.log("send all person data")
 
