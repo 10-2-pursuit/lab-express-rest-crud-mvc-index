@@ -1,17 +1,15 @@
 const express = require("express"); 
 
 
-const locations = express.Router();
+const router = express.Router();
 
-const locationData = require("../models/locations");
+const locationsData = require("../models/locations");
 // Seperation of concerns 
 //  Middleware above the routes!!!!!
 //  a function that happens between a request and response
 
-locations.get("/locations", (req, res) => {
- console.log("sending all location data")
-
- res.json(locationData);
+router.get("/locations", (req, res) => {
+    res.send(locationsData);
 });
 
 // locations.get(":/index", (req, res) => {
@@ -34,4 +32,4 @@ locations.get("/locations", (req, res) => {
 // })
  
 
-module.exports = locations;
+module.exports = router;

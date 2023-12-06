@@ -1,9 +1,9 @@
 const express = require("express");
-const planData = require("../models/plans");
-const plans = express.Router();
+const plansData = require("../models/plans");
+const router = express.Router();
 
-plans.get("/plans", (req, res) => {
-    res.send(planData);
+router.get("/plans", (req, res) => {
+    res.send(plansData);
 });
 
-module.exports = plans;
+module.exports = router;

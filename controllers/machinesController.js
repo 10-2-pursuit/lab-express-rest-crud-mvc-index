@@ -1,15 +1,15 @@
 const express = require("express");
 
-const machines = express.Router();
+const router = express.Router();
 
-const machinesData = require("../models/machine");
+const machinesData = require("../models/machines");
 
-machines.get("/machines", (req, res) => {
+router.get("/machines", (req, res) => {
     
     console.log("Send all machine data")
 
-    res.json(machinesData);
+    res.send(machinesData);
 })
 
 
-module.exports = machines;
+module.exports = router;
